@@ -1,0 +1,43 @@
+@import "./variables";
+@import "./fonts";
+
+body {
+  background: $background-900;
+  font-family: "Montserrat", sans-serif;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-h4 {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  color: $text-100;
+}
+.subtitle-1 {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: $text-400;
+}
+.overline-2 {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  color: $text-400;
+  text-transform: uppercase;
+}
+.body-3 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: $text-400;
+}

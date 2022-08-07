@@ -9,6 +9,8 @@ export class MainComponent implements OnInit {
 
   constructor() { }
 
+  days = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
+
   ngOnInit(): void {
   }
 

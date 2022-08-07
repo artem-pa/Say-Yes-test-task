@@ -1,0 +1,40 @@
+@import '/src/assets/styles/common';
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+  height: 25px;
+  padding-left: 35px;
+  cursor: pointer;
+  user-select: none;
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    &:checked ~ .checkmark::after {
+        display: block;
+      }
+  }
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    border: 1px solid $primary-700;
+    border-radius: 5px;
+    &::after {
+      content: "";
+      display: none;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      background: url(../../../../assets/images/check.svg) no-repeat;
+      background-position: center;
+    }
+  }
+}

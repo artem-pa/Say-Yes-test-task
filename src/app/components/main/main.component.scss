@@ -1,10 +1,137 @@
-@import "/src/assets/styles/variables";
-@import "/src/assets/styles/fonts";
+@import "/src/assets/styles/common";
 
-.container  {
-  width: 1550px;
+.container {
+  width: min(calc(100vw - 20px), 1600px);
+  min-height: 100vh;
   margin: 0 auto;
   padding: 55px 0;
   display: grid;
-  
+  align-items: start;
+  gap: 35px 80px;
+  grid-template: 1fr / 1fr 380px;
+  &__element {
+    padding: 35px;
+    background: $background-800;
+    border-radius: 20px;
+    &:first-child {
+      align-self: stretch;
+    }
+  }
+  &__btn {
+    width: 415px;
+    height: 64px;
+    background: $primary-500;
+    border-radius: 16px;
+    justify-self: end;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: $text-400;
+    transition: 0.2s;
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+.settings {
+  .flex-column {
+    row-gap: 35px;
+  }
+
+  &__input-title {
+    margin-bottom: 8px;
+  }
+  &__input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 64px;
+    padding: 0 22px;
+    background: $background-500;
+    border-radius: 16px;
+    cursor: pointer;
+    &:focus {
+      outline: 1px solid $primary-500;
+    }
+  }
+  &__date {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+    .date-box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px 24px;
+    }
+    .days {
+      margin-top: 24px;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      ul {
+        display: flex;
+        column-gap: 32px;
+      }
+    }
+  }
+  .city {
+    width: 340px;
+    margin-top: 90px;
+    img {
+      vertical-align: text-top;
+      margin-left: 3px;
+    }
+  }
+}
+
+.summary {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 24px 1fr;
+  gap: 40px 24px;
+  .circle {
+    height: 24px;
+    background: $primery-200;
+    border: 8px solid $primery-800;
+    border-radius: 50%;
+    position: relative;
+    &::after {
+      content: "";
+      width: 2px;
+      height: 24px;
+      border-radius: 2px;
+      background: $secondary-300;
+      position: absolute;
+      left: 4px;
+      top: 36px;
+    }
+    &:last-of-type::after {
+      content: none;
+    }
+  }
+  .text {
+    height: 48px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: $text-500;
+    border: 1px solid $secondary-500;
+    border-radius: 12px;
+  }
+
+  .circle.active {
+    background: #daebf8bf;
+    border-color: #0085cf;
+    & + .text {
+      color: $text-400;
+      border-color: $primary-500;
+    }
+  }
 }
