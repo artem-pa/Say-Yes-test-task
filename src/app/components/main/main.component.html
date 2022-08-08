@@ -22,11 +22,11 @@
           <div class="date-box">
             <div class="settings__input-box">
               <p class="settings__input-title overline-2">Время</p>
-              <div class="settings__input subtitle-1">15:00</div>
+              <app-select [options]="times" value="10:00" type="time" (onChange)="foo($event)"></app-select>
             </div>
             <div class="settings__input-box">
               <p class="settings__input-title overline-2">Время</p>
-              <div class="settings__input subtitle-1">15:45</div>
+              <app-select [options]="times" value="21:00" type="time" (onChange)="foo($event)"></app-select>
             </div>
             <app-checkbox title="Все время"></app-checkbox>
           </div>
@@ -40,10 +40,9 @@
       </div>
       <div class="settings__input-box city">
         <p class="settings__input-title overline-2">
-          Выберите город
-          <img src="../../../assets/images/question.svg">
+          Выберите город <img src="../../../assets/images/question.svg">
         </p>
-        <div class="settings__input subtitle-1">Выберите город</div>
+        <app-select [options]="cities" placeholder="Выберите город" (onChange)="foo($event)"></app-select>
       </div>
     </div>
     <div class="container__element summary">
@@ -52,6 +51,6 @@
       <div class="circle"></div>
       <p class="text">Контент</p>
     </div>
-    <button class="container__btn">Продолжить</button>
+    <button class="container__btn" (click)="submit()">Продолжить</button>
   </div>
 </main>

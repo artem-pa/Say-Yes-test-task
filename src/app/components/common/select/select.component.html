@@ -1,0 +1,12 @@
+<div class="select" [ngClass]="selectType">
+  <button class="select-button subtitle-1" (click)="toggleDropdown()"
+    (clickOutside)="dropdownOpen = false">
+    <span class="select-value">{{currentValue ? currentValue : placeholder}}</span>
+  </button>
+  <div class="dropdown" [ngClass]="{'dropdown-open' : dropdownOpen}">
+    <ul class="dropdown-list" role="listbox" aria-expanded="false" [ngClass]="{'dropdown-open' : dropdownOpen}">
+      <li *ngFor="let opt of options" [ngClass]="{'selected' : currentValue === opt}" (click)="select(opt)" role="option"
+        [innerText]="opt"></li>
+    </ul>
+  </div>
+</div>
