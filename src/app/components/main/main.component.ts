@@ -15,10 +15,13 @@ export class MainComponent implements OnInit {
   minutes = [0, 15, 30, 45];
   times = this.createTimeList();
 
+  bannerName = 'Banner1';
+
   dateStart: string;
   dateEnd: string;
-  minDate: string;
-  maxDate: string;
+
+  timeStart = '10:00';
+  timeEnd = '21:00';
 
   ngOnInit(): void {
   }
@@ -37,15 +40,26 @@ export class MainComponent implements OnInit {
     return numString.length > 1 ? numString : `0${numString}`;
   }
 
-  updateMinDate(date: string) {
-    this.minDate = date;
+  updateDateStart(date: string) {
+    this.dateStart = date;
   }
-
-  updateMaxDate(date: string) {
-    this.maxDate = date;
+  updateDateEnd(date: string) {
+    this.dateEnd = date;
+  }
+  updateTimeStart(time: string) {
+    this.timeStart = time;
+  }
+  updateTimeEnd(time: string) {
+    this.timeEnd = time;
   }
 
   submit() {
-    alert()
+    alert(
+      `
+      Название баннера: ${this.bannerName}
+      Дата:  ${this.dateStart} - ${this.dateEnd}
+      Время: ${this.timeStart} - ${this.timeEnd}
+      `
+    )
   }
 }

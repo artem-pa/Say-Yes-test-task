@@ -3,30 +3,30 @@
     <div class="container__element settings">
       <div class="flex-column">
         <h1 class="settings__title title-h4">Настройки</h1>
-        <div class="settings__input-box">
+        <form class="settings__input-box">
           <p class="settings__input-title overline-2">Название баннера</p>
-          <input type="text" class="settings__input subtitle-1" value="Banner1">
-        </div>
+          <input type="text" name="bannerName" class="settings__input subtitle-1" [(ngModel)]="bannerName">
+        </form>
         <div class="settings__date date">
           <div class="date-box">
             <div class="settings__input-box">
               <p class="settings__input-title overline-2">Дата</p>
-              <app-datepicker (onChange)="updateMinDate($event)" [maxValue]="maxDate"></app-datepicker>
+              <app-datepicker (onChange)="updateDateStart($event)" [maxValue]="dateEnd"></app-datepicker>
             </div>
             <div class="settings__input-box">
               <p class="settings__input-title overline-2">Дата</p>
-              <app-datepicker (onChange)="updateMaxDate($event)" [minValue]="minDate"></app-datepicker>
+              <app-datepicker (onChange)="updateDateEnd($event)" [minValue]="dateStart"></app-datepicker>
             </div>
             <app-checkbox title="Бесконечная акция"></app-checkbox>
           </div>
           <div class="date-box">
             <div class="settings__input-box">
               <p class="settings__input-title overline-2">Время</p>
-              <app-select [options]="times" value="10:00" type="time"></app-select>
+              <app-select [options]="times" [value]="timeStart" [maxValue]="timeEnd" (onChange)="updateTimeStart($event)" type="time"></app-select>
             </div>
             <div class="settings__input-box">
               <p class="settings__input-title overline-2">Время</p>
-              <app-select [options]="times" value="21:00" type="time"></app-select>
+              <app-select [options]="times" [value]="timeEnd" [minValue]="timeStart" (onChange)="updateTimeEnd($event)" type="time"></app-select>
             </div>
             <app-checkbox title="Все время"></app-checkbox>
           </div>

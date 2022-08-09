@@ -37,13 +37,10 @@ export class DatepickerComponent implements OnInit {
   currentMonthDays = Array.from({ length: 30 }, (_, min) => min + 1);
   nextMonthDays = Array.from({ length: 9 }, (_, min) => min + 1);
 
-  foo() {
-    console.log('click')
-  }
-
   ngOnInit(): void {
     this.value = !this.value ? this.todayDate : this.value;
     this.updateActiveDate();
+    setTimeout(() => this.saveValue(), 100);
   }
 
   toggleDropdown() {

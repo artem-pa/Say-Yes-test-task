@@ -16,6 +16,8 @@ export class SelectComponent implements OnInit{
   @Input() value!: string;
   @Input() type: SelectType;
   @Input() placeholder!: string;
+  @Input() minValue: string;
+  @Input() maxValue: string;
 
   @Output() onChange = new EventEmitter<string>();
 
@@ -38,12 +40,12 @@ export class SelectComponent implements OnInit{
     this.dropdownOpen = false;
   }
 
-  selectByIndex(i: number) {
-    let value = this.options[i];
-    this.select(value);
-  }
-
   select(value: string) {
+    console.log(this.options.indexOf(value), value)
+    if (!this.isValidValue(value)) {
+      alert('Wrong value!');
+      return;
+    }
     this.currentValue = value;
     this.closeDropdown();
     this.onChange.emit(this.currentValue);
@@ -51,6 +53,16 @@ export class SelectComponent implements OnInit{
 
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
+  }
+
+  isValidValue(newValue: string): boolean {
+    if (this.maxValue) {
+      return newValue <= this.maxValue;
+    }
+    if (this.minValue) {
+      return newValue >= this.minValue;
+    }
+    return true;
   }
 
   get selectType(): string {
