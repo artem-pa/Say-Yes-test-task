@@ -41,7 +41,6 @@ export class SelectComponent implements OnInit{
   }
 
   select(value: string) {
-    console.log(this.options.indexOf(value), value)
     if (!this.isValidValue(value)) {
       alert('Wrong value!');
       return;

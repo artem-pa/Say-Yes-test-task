@@ -4,8 +4,11 @@
   </button>
   <div class="dropdown" [ngClass]="{'dropdown-open' : dropdownOpen}">
     <ul class="dropdown-list" role="listbox" aria-expanded="false" [ngClass]="{'dropdown-open' : dropdownOpen}">
-      <li *ngFor="let opt of options" [ngClass]="{'selected' : currentValue === opt}" (click)="select(opt)" role="option"
-        [innerText]="opt"></li>
+      <li 
+        *ngFor="let opt of options; i"
+        [ngClass]="{'selected' : currentValue === opt}" 
+        (click)="select(opt)"
+        role="option" [innerText]="opt"></li>
     </ul>
   </div>
 </div>
