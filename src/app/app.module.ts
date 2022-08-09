@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { CheckboxComponent } from './components/common/checkbox/checkbox.component';
 import { SelectComponent } from './components/common/select/select.component';
+import { DatepickerComponent } from './components/common/datepicker/datepicker.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { SelectComponent } from './components/common/select/select.component';
     MainComponent,
     CheckboxComponent,
     SelectComponent,
+    DatepickerComponent,
   ],
   imports: [
     BrowserModule,

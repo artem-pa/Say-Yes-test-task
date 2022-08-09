@@ -1,0 +1,21 @@
+<div class="datepicker" (clickOutside)="foo()">
+  <button type="button" class="date-button subtitle-1 date-toggle" (click)="toggleDropdown()">
+    <span class="datepicker__value">{{value | date:'MMMM, d, YYYY'}}</span>
+  </button>
+  <div class="date-dropdown" [ngClass]="isOpen ? 'active' : ''">
+    <div class="header">
+      <app-select [options]="monthes.names" type="dateLight" [value]="activeDate.month" (onChange)="setActiveMonth($event)"></app-select>
+      <app-select [options]="years" type="dateDark" [value]="activeDate.year.toString()" (onChange)="setActiveYear($event)"></app-select>
+    </div>
+
+    <div class="calendar">
+      <span class="input-2 week-days" *ngFor="let day of weekDays">{{day}}</span>
+      <button class="caption-3 previous-month day" *ngFor="let day of previousMonthDays">{{day}}</button>
+      <button class="caption-3 current-month day" *ngFor="let day of currentMonthDays" [ngClass]="{'active' : day === activeDate.day}" (click)="setActiveDay(day)">{{day}}</button>
+      <button class="caption-3 next-month day" *ngFor="let day of nextMonthDays">{{day}}</button>
+    </div>
+    
+    <button class="subtitle-1 calendar-btn light" (click)="saveValue()">Установить дату</button>
+    <button class="subtitle-1 calendar-btn" (click)="closeDropdown()">Отменить</button>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+@import "../../../../assets/styles/common";
+
+.datepicker {
+  position: relative;
+}
+
+.date-button {
+  border: none;
+  border-radius: 16px;
+  height: 100%;
+  height: 64px;
+  padding: 0 22px;
+  position: relative;
+  justify-content: space-between;
+  background-color: $background-500;
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  width: 100%;
+  cursor: pointer;
+  align-items: center;
+  &:focus {
+    outline: 1px solid $primary-700;
+  }
+  &::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: url(../../../../assets/images/calendar.svg) no-repeat;
+    background-size: cover;
+  }
+}
+
+.date-dropdown {
+  display: none;
+  position: absolute;
+  left: -15px;
+  top: 55px;
+  padding: 32px;
+  background: $primary-900;
+  border-radius: 12px 12px 0 0;
+  z-index: 10;
+  &.active {
+    display: block;
+  }
+
+  .header {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .calendar {
+    margin-bottom: 24px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(7, 40px);
+    grid-template-rows: repeat(7, 40px);
+    // text-align: center;
+    .day{
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: transparent;
+      cursor: auto;
+      transition: 0.2s;
+      &.current-month:hover {
+        font-size: 1.1em;
+        cursor: pointer;
+      }
+    }
+    .current-month {
+      color: $text-400;
+      &.active {
+        background: $primary-500;
+        border-radius: 12px;
+        font-weight: 700;
+        color: $text-100;
+      }
+    }
+  }
+}
+
+.calendar-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  background: $background-700;
+  text-transform: none;
+  transition: 0.2s;
+  &:active {
+    transform: scale(0.8);
+  }
+  &.light {
+    background: $primary-500;
+    margin-bottom: 8px;
+  }
+}

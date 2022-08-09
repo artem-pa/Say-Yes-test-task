@@ -11,22 +11,22 @@
           <div class="date-box">
             <div class="settings__input-box">
               <p class="settings__input-title overline-2">Дата</p>
-              <div class="settings__input subtitle-1">24,12,2021</div>
+              <app-datepicker (onChange)="updateMinDate($event)" [maxValue]="maxDate"></app-datepicker>
             </div>
             <div class="settings__input-box">
               <p class="settings__input-title overline-2">Дата</p>
-              <div class="settings__input subtitle-1">24,12,2021</div>
+              <app-datepicker (onChange)="updateMaxDate($event)" [minValue]="minDate"></app-datepicker>
             </div>
             <app-checkbox title="Бесконечная акция"></app-checkbox>
           </div>
           <div class="date-box">
             <div class="settings__input-box">
               <p class="settings__input-title overline-2">Время</p>
-              <app-select [options]="times" value="10:00" type="time" (onChange)="foo($event)"></app-select>
+              <app-select [options]="times" value="10:00" type="time"></app-select>
             </div>
             <div class="settings__input-box">
               <p class="settings__input-title overline-2">Время</p>
-              <app-select [options]="times" value="21:00" type="time" (onChange)="foo($event)"></app-select>
+              <app-select [options]="times" value="21:00" type="time"></app-select>
             </div>
             <app-checkbox title="Все время"></app-checkbox>
           </div>
@@ -42,7 +42,7 @@
         <p class="settings__input-title overline-2">
           Выберите город <img src="../../../assets/images/question.svg">
         </p>
-        <app-select [options]="cities" placeholder="Выберите город" (onChange)="foo($event)"></app-select>
+        <app-select [options]="cities" placeholder="Выберите город"></app-select>
       </div>
     </div>
     <div class="container__element summary">

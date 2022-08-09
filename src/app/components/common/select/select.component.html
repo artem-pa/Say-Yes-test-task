@@ -1,6 +1,5 @@
 <div class="select" [ngClass]="selectType">
-  <button class="select-button subtitle-1" (click)="toggleDropdown()"
-    (clickOutside)="dropdownOpen = false">
+  <button class="select-button subtitle-1" (click)="toggleDropdown()">
     <span class="select-value">{{currentValue ? currentValue : placeholder}}</span>
   </button>
   <div class="dropdown" [ngClass]="{'dropdown-open' : dropdownOpen}">

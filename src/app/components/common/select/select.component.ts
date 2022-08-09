@@ -17,7 +17,7 @@ export class SelectComponent implements OnInit{
   @Input() type: SelectType;
   @Input() placeholder!: string;
 
-  @Output() onChange = new EventEmitter();
+  @Output() onChange = new EventEmitter<string>();
 
   public currentValue!: string;
   public dropdownOpen: boolean = false;
@@ -51,7 +51,6 @@ export class SelectComponent implements OnInit{
 
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
-    this.dropdownElement.setAttribute('aria-expanded', this.dropdownOpen ? "true" : "false");
   }
 
   get selectType(): string {
