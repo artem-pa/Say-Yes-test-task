@@ -22,8 +22,8 @@ export const MONTH_LIST = {
 }
 
 export const CITY_LIST = [
-  'Киев',
-  'Львов',
-  'Харьков',
-  'Днепр'
+  'Kyiv',
+  'Lviv',
+  'Kharkib',
+  'Dnipro'
 ];

@@ -2,36 +2,36 @@
   <div class="container">
     <div class="container__element settings">
       <div class="flex-column">
-        <h1 class="settings__title title-h4">Настройки</h1>
+        <h1 class="settings__title title-h4">Settings</h1>
         <form class="settings__input-box">
-          <p class="settings__input-title overline-2">Название баннера</p>
+          <p class="settings__input-title overline-2">Banner title</p>
           <input type="text" name="bannerName" class="settings__input subtitle-1" [(ngModel)]="bannerName">
         </form>
         <div class="settings__date date">
           <div class="date-box">
             <div class="settings__input-box">
-              <p class="settings__input-title overline-2">Дата</p>
+              <p class="settings__input-title overline-2">Date</p>
               <app-datepicker (onChange)="updateDateStart($event)" [maxValue]="dateEnd"></app-datepicker>
             </div>
             <div class="settings__input-box">
-              <p class="settings__input-title overline-2">Дата</p>
+              <p class="settings__input-title overline-2">Date</p>
               <app-datepicker (onChange)="updateDateEnd($event)" [minValue]="dateStart"></app-datepicker>
             </div>
-            <app-checkbox title="Бесконечная акция"></app-checkbox>
+            <app-checkbox title="Endless action"></app-checkbox>
           </div>
           <div class="date-box">
             <div class="settings__input-box">
-              <p class="settings__input-title overline-2">Время</p>
+              <p class="settings__input-title overline-2">Time</p>
               <app-select [options]="times" [value]="timeStart" [maxValue]="timeEnd" (onChange)="updateTimeStart($event)" type="time"></app-select>
             </div>
             <div class="settings__input-box">
-              <p class="settings__input-title overline-2">Время</p>
+              <p class="settings__input-title overline-2">Time</p>
               <app-select [options]="times" [value]="timeEnd" [minValue]="timeStart" (onChange)="updateTimeEnd($event)" type="time"></app-select>
             </div>
-            <app-checkbox title="Все время"></app-checkbox>
+            <app-checkbox title="All hours"></app-checkbox>
           </div>
           <div class="settings__input-box days">
-            <p class="settings__input-title overline-2">Дни</p>
+            <p class="settings__input-title overline-2">Days of week</p>
             <ul>
               <app-checkbox *ngFor="let day of days" [title]="day" [checked]="true"></app-checkbox>
             </ul>
@@ -40,17 +40,17 @@
       </div>
       <div class="settings__input-box city">
         <p class="settings__input-title overline-2">
-          Выберите город <img src="../../../assets/images/question.svg">
+          Choose a city <img src="../../../assets/images/question.svg">
         </p>
-        <app-select [options]="cities" placeholder="Выберите город"></app-select>
+        <app-select [options]="cities" placeholder="Choose a city"></app-select>
       </div>
     </div>
     <div class="container__element summary">
       <div class="circle active"></div>
-      <p class="text">Настройки баннера</p>
+      <p class="text">Banner settings</p>
       <div class="circle"></div>
-      <p class="text">Контент</p>
+      <p class="text">Content</p>
     </div>
-    <button class="container__btn" (click)="submit()">Продолжить</button>
+    <button class="container__btn" (click)="submit()">Continue</button>
   </div>
 </main>
