@@ -57,11 +57,11 @@
     justify-items: center;
     grid-template-columns: repeat(7, 40px);
     grid-template-rows: repeat(7, 40px);
-    // text-align: center;
     .day{
       width: 100%;
       height: 100%;
       display: block;
+      color: $secondary-500;
       background: transparent;
       cursor: auto;
       transition: 0.2s;

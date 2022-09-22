@@ -10,7 +10,7 @@ export class MainComponent implements OnInit {
 
   constructor() { }
 
-  days = DAY_LIST.ru;
+  days = DAY_LIST.en;
   cities = CITY_LIST;
   minutes = [0, 15, 30, 45];
   times = this.createTimeList();
@@ -56,9 +56,9 @@ export class MainComponent implements OnInit {
   submit() {
     alert(
       `
-      Название баннера: ${this.bannerName}
-      Дата:  ${this.dateStart} - ${this.dateEnd}
-      Время: ${this.timeStart} - ${this.timeEnd}
+      Banner title: ${this.bannerName}
+      Date:  ${this.dateStart} - ${this.dateEnd}
+      Time: ${this.timeStart} - ${this.timeEnd}
       `
     )
   }
